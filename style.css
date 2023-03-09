@@ -13,7 +13,7 @@
     margin: 0;
 }
 html {
-    margin-top: 2rem;
+    margin-top: 4rem;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -27,14 +27,7 @@ h1 {
     font-weight: 900;
     cursor: pointer;
 }
-.contextualMenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: large;
-    width: 10rem;
-    color: var(--gray);
-}
+
 header {
     position: fixed;
     top: 0;
@@ -42,58 +35,76 @@ header {
     background-color: var(--background);
     display: flex;
     padding: 1rem var(--side-padd) 1rem var(--side-padd);
-    height: 4rem;
+    height: 2rem;
     font-family: 'Mada', sans-serif;
     font-weight: 400;
     justify-content: space-between;
+    align-items: center;
     z-index: 1000;
     user-select: none;
 }
 header img {
     cursor: pointer;
     user-select: none;
-    height: 2.3rem;
+    width: 14rem;
 }
 #logo {
     display: flex;
     align-items: center;
-    width: 20%;
 }
 #headerRight {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: calc(100% - 14rem);
 }
 #secciones {
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: var(--gray);
-    width: 75%;
+    width: 100%;
 }
 #secciones h2 {
     cursor: pointer;
     padding: 0.5rem 1rem;
     transition: background-color 200ms;
     border-radius: 1rem;
+    font-size: larger;
 }
-#secciones h2:hover:not(#selected) {
+.seccionesTitle:hover:not(#selected) {
     cursor: pointer;
     background-color: #eeeeee;
+}
+#secciones svg {
+    padding: 0.3rem 2rem;
+}
+#secciones div {
+    display: flex;
+    align-items: center;
 }
 #selected {
     background-color: var(--light-green);
     color: var(--strong-green);
     border-radius: 1rem;
 }
+#selected svg {
+    fill: var(--strong-green);
+    stroke: none;
+}
+.icon{
+    display: none;
+    height: 1.5rem;
+    fill: var(--gray);
+    /* stroke: var(--gray);
+    stroke-width: 1.4px; */
+}
 #cuentas {
-    width: 30%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: right;
     /* font-family: 'Mulish', sans-serif; */
     font-weight: 900;
-    
 }
 #login {
     cursor: pointer;
@@ -105,7 +116,7 @@ header img {
     font-weight: 900;
     color: var(--gray);
     align-items: center;
-    width: 16rem;
+    width: 8rem;
 }
 
 #signup {
@@ -126,7 +137,6 @@ header img {
 
 #banner {
     height: 70vh;
-    margin: var(--side-padd) 0;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -177,46 +187,68 @@ nav {
     width: calc(100% - (var(--side-padd) * 2));
     background-color: var(--background);
     font-family: 'Mulish', sans-serif;
-    font-size: 1rem;
+    font-size: medium;
     position: sticky;
-    top: 6rem;
+    top: 3.5rem;
     padding: 0.4rem var(--side-padd) 1rem var(--side-padd);
     z-index: 999;
 }
-#contextual {
-    display: flex;
-    width: 70%;
-    justify-content: space-around;
-    margin-right: var(--side-padd);
-}
-nav h3 {
-    font-weight: 900;
-    transition: color 200ms, background-color 200ms;
-    border-radius: 1rem;
-}
-nav h3:hover {
-    cursor: pointer;
-    background-color: #eeeeee;
-}
-.search {
+#searchBox {
+    position: relative;
     display: flex;
     align-items: center;
     background-color: white;
     width: 25%;
-    padding: 0.5rem 1rem;
+    height: 1.5rem;
+    padding: 0.5rem;
     border: none;
     border-radius: 1rem;
     transition: outline 100ms, width 100ms;
     outline: 0px solid var(--light-green);
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.05);
     font-size: large;
-    font-family: 'Mulish', sans-serif;
     font-weight: 700;
 }
-.search:focus {
-    width: 25%;
-    outline: 5px solid var(--light-green);
+#searchBox svg {
+    position: absolute;
+    left: 0.5rem;
+    height: 1rem;
+    color: var(--gray);
 }
+.search {
+    font-family: 'Mulish', sans-serif;
+    border: none;
+    width: calc(100% - 3rem);
+    padding-left: 1.7rem;
+    height: 100%;
+    outline: none;
+}
+#contextual {
+    display: flex;
+    justify-content: space-around;
+    margin-right: var(--side-padd);
+}
+.contextualOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    color: var(--gray);
+}
+#contextualSelected {
+    color: var(--strong-green);
+}
+nav h3 {
+    font-weight: 900;
+    transition: color 200ms, background-color 200ms;
+    border-radius: 1rem;
+    font-size: medium;
+}
+nav h3:hover {
+    cursor: pointer;
+    color: black;
+}
+
 #app {
     width: calc(100% - (var(--side-padd) * 2));
     padding: 1rem var(--side-padd);
@@ -229,7 +261,7 @@ article {
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
+    margin: 0 1rem 2rem 0;
 }
 
 .curso{
@@ -360,8 +392,7 @@ article {
     background-color: #f6f6f6;
 }
 .pie-pagina .grupo-1{
-    width: 100%;
-    max-width: 1200px;
+    width: 90%;
     margin: auto;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -423,17 +454,31 @@ article {
     color: #229558;
 }
 @media screen and (max-width:1140px){
+    html {
+        margin-bottom: 4rem;
+    }
     header {
         flex-direction: column;
         align-items: center;
-        height: 6rem;
+        justify-content: center;
+        height: 2.3rem;
+    }
+    #headerRight {
+        background-color: var(--background);
+        position: fixed;
+        width: 100%;
+        padding: 1rem;
+        bottom: 0;
+        height: 1.5rem;
     }
     #logo {
         width: 85%;
         justify-content: center;
     }
     nav {
-        top: 8rem;
+        top: 4.3rem;
+        height: auto;
+        overflow-x: scroll;
     }
     #bannerMid {
         width: 85%;
@@ -441,15 +486,29 @@ article {
     :root {
         --side-padd: 1rem;
     }
+    #searchBox {
+        width: fit-content;
+    }
     .search:focus {
         width: max-content;
-        outline: 5px solid var(--light-green);
     }
+    
 }
 @media screen and (max-width:800px){
-    #cuentas {
+    #login, #signup {
         display: none;
     }
+    #cuentas {
+        width: auto;
+        margin: 0;
+    }
+    .icon {
+        display: inline;
+    }
+    #secciones div h2 {
+        display: none;
+    }
+    
     #secciones {
         width: 100%;
     }
@@ -458,14 +517,12 @@ article {
     }
     #titulo {
         width: 90%;
+        font-size: 10vw;
     }
     .pie-pagina .grupo-1{
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
         grid-gap:30px;
         padding: 35px 0px;
-    }
-    .search {
-        width: 2rem;
     }
 }
