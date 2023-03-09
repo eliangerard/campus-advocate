@@ -203,11 +203,11 @@ nav {
     padding: 0.5rem;
     border: none;
     border-radius: 1rem;
-    transition: outline 100ms, width 100ms;
     outline: 0px solid var(--light-green);
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.05);
     font-size: large;
     font-weight: 700;
+    transition: width 100ms;
 }
 #searchBox svg {
     position: absolute;
@@ -222,6 +222,7 @@ nav {
     padding-left: 1.7rem;
     height: 100%;
     outline: none;
+    transition: width 100ms;
 }
 #contextual {
     display: flex;
@@ -261,7 +262,7 @@ article {
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.05);
-    margin: 0 1rem 2rem 0;
+    margin: 0 0.5rem 2rem 0.5;
 }
 
 .curso{
